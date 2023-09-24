@@ -72,13 +72,15 @@ const FireStorage = () => {
 
         function deleteFile() {
             // Create a reference to the file to delete
-            const desertRef = ref(storage, 'images/desert.jpg');
+            const desertRef = ref(storage, 'images/group 17.png');
 
             // Delete the file
             deleteObject(desertRef).then(() => {
+                alert("file deleted successfully");
                 // File deleted successfully
             }).catch((error) => {
                 // Uh-oh, an error occurred!
+                alert("an error occured");
             });
         }
     }
@@ -93,6 +95,9 @@ const FireStorage = () => {
                 <div className="h-[500px] w-[100%] bg-red-100">
                     <button onClick={downloadFile} className="p-3 bg-red-500 hover:bg-red-600">download</button>
                     <img src={downloadedImage} alt="hp" />
+                </div>
+                <div className="h-[500px] w-[100%] bg-red-100">
+                    <button onClick={downloadFile} className="p-3 bg-purple-500 hover:bg-purple-600">delete</button>
                 </div>
             </div>
         </>
