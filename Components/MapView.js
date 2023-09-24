@@ -19,10 +19,6 @@ export default function MapView({pinBool}) {
     padding: '5px',
   }
 
-
-
-
-
   return (
     <div>
       <Head>
@@ -45,12 +41,12 @@ export default function MapView({pinBool}) {
         <NavigationControl />
         <ScaleControl />
         <GeolocateControl style={popupContainerStyle} position='bottom-right' />
-        <Marker longitude={85.77639251907557} latitude={20.275502994202448} color="red" />
+        <Marker longitude={85.77639251907557} latitude={20.275502994202448} color="red"/>
         { pinBool && LocationData().map((value, index) =>
           <Marker key={index} longitude={value.longitude} latitude={value.latitude} color={value.color} >
-            <div className='h-12 w-12'>
+            <button className='h-12 w-12 hover:h-14 hover:w-14 duration-200'>
             <img src='/trashpin.png' />
-            </div>
+            </button>
           </Marker>
           )}
       </Map>
