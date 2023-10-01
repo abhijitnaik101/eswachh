@@ -13,6 +13,7 @@ import SearchBar from '@/Components/SearchDeviceBar';
 import Search from '@/Components/SearchDeviceBar';
 import Awareness from './Awareness/page';
 import FacilityHome from './FaciliyHome/page';
+import Experiment from './Experiment/page';
 
 
 
@@ -22,7 +23,7 @@ export default function Home() {
     <>
     <div>
       
-      <FacilityHome/>
+      <Experiment/>
     </div>
     </>
   );
