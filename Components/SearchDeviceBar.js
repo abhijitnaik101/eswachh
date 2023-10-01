@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import LocationData from './LocationData';
+import DeviceData from './DeviceData';
 
-const SearchBar = () =>
+const SearchDeviceBar = ({shoDevice}) =>
 {
     
     const [searchLocation, setSearchLocation] = useState(null);
     const [searchClicked, setSearchClicked] = useState(false);
-
-    
 
     const onChanged = (value) =>
     {
@@ -21,6 +20,10 @@ const SearchBar = () =>
         setSearchClicked(true);
     }
 
+    function showDeviceFunc()
+    {
+        showDevice(true);
+    }
 
 
     return(
@@ -29,12 +32,12 @@ const SearchBar = () =>
                         
                         <div className='flex justify-between items-center'>
                             <input onChange={(e)=>{ onChanged(e.target.value) }} type='address' value={searchLocation} autoComplete='on' placeholder='Search...' className='py-3 px-4 m-3 rounded-lg w-full'/>
-                            <button className='bg-blue-500 hover:bg-blue-600 text-white h-10 w-24 rounded-md'>click me</button>
+                            <button onClick={() => shoDevice(true)} className='bg-blue-500 hover:bg-blue-600 text-white h-10 w-24 rounded-md'>search</button>
                         </div>
                         {
                             (searchLocation && !searchClicked) ? <>
                                 <div className='absolute z-10 bg-white rounded-lg p-4 w-full shadow-md'>
-                                    {LocationData().map( (value, index) => 
+                                    {DeviceData().map( (value, index) => 
                                     <p onClick={(e) => {onClicked(e.target.textContent); console.log(e.target.textContent)}} className='p-1 hover:bg-slate-100'>
                                         {value.name}
                                     </p> )}
@@ -46,4 +49,4 @@ const SearchBar = () =>
     )
 }
 
-export default SearchBar
+export default SearchDeviceBar

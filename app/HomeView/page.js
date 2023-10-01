@@ -6,18 +6,20 @@ import React, { useEffect, useState } from 'react';
 import { app } from '../Firebase';
 
 const HomeView = ({props}) => {
-
+    //initialized authentication
     const auth = getAuth(app);
 
-    
     const backG = [
         {backgroundImage : "url('joinusblack.png')",},
         {backgroundImage: "url('aboutus.png')"},
         {backgroundImage: "url('volunteers.png')"},
+        {backgroundImage: "url('events.png')"}
     ]
 
+    //user for signin/signup
     const [user, setUser] = useState(null);
     
+    //tracks the signin/signup state of user.
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
@@ -30,6 +32,8 @@ const HomeView = ({props}) => {
             }
         })
     }, [])
+
+
     return (
         <>
         <main className='bg-slate-50'>
@@ -37,10 +41,11 @@ const HomeView = ({props}) => {
             <div>
                 <div className="h-96 w-full bg-green-400 bg-cover flex justify-center items-center" style={backG[0]}>
                     <div className='flex flex-col justify-center items-center'>
-                        <p className='text-[50px] font-semibold text-white'>ECOFINDER</p>
+                        <p className='text-[50px] font-semibold text-white'>E-SWACHH</p>
                         <p className='text-[15px] text-white'>FINDS YOUR WAY TO LACATE AND DISPOSE YOUR E-WASTE</p>
+                        {/* lOG IN/ LOGGED IN BUTTON */}
                         {
-                            user !== null ? <Link href='/SignIn' className='bg-green-600 hover:bg-green-700 py-2 px-5 text-green-50 font-semibold rounded-lg m-4'>YOU ARE LOGGED IN</Link>
+                            user !== null ? <Link href='/SignIn' className='bg-green-600 hover:bg-green-700 py-2 px-5 text-green-50 font-semibold rounded-lg m-4'>LOGGED IN</Link>
                             : <Link href='/SignIn' className='bg-green-600 hover:bg-green-700 py-2 px-5 text-green-50 font-semibold rounded-lg m-4'>JOIN US</Link>
                         }
                         
@@ -49,7 +54,8 @@ const HomeView = ({props}) => {
                 </div>
 
                 <h1 className="h-48 w-30 text-5xl font-serif text-center pt-6"> WELCOME!</h1>
-                <Link href='/FaciliyHome' className='px-3 py-6 bg-blue-500 text-white font-medium hover:bg-blue-600'>join as facility</Link>
+                
+                {/* ABOUT US */}
                 <div className="flex justify-evenly items-center ">
                     <div className="h-full w-[600px] text-black pt-4 ml-10">
 
@@ -66,7 +72,7 @@ const HomeView = ({props}) => {
             </div>
 
 
-
+            {/* OUR MISSION */}
             <div className='py-40  relative'>
 
                 <div className='absolute h-56 w-56 rounded-full -z-10 filter blur-3xl left-3 top-44'></div>
@@ -76,7 +82,6 @@ const HomeView = ({props}) => {
                 </div>
 
                 <div className="flex justify-evenly">
-
                     <div className='relative flex flex-col items-center pt-14'>
                         <div className='absolute top-0 h-36 w-36'>
                             <img src='/location.png' />
@@ -113,16 +118,14 @@ const HomeView = ({props}) => {
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
+            {/* OUR MISSION end */}
 
+            {/* OUR VOLUNTEERS */}
             <div>
                 <div className="flex pt-10 justify-evenly">
-
                     <div className="h-[433px] w-[650px] bg-green-500 bg-cover" style={backG[2]}> </div>
-
-
                     <div className="h-[433px] w-[650px] flex flex-col justify-center">
                         <div>
                             <h1 className='text-2xl font-bold text-black'> OUR VOLUNTEERS</h1>
@@ -135,11 +138,19 @@ const HomeView = ({props}) => {
             </div>
 
             <div className='flex flex-col items-center py-52'>
-                <h1 className="font-bold sherif text-3xl"> EVENTS</h1>
-                <div className="w-[1430px] h-[500.81px] bg-green-500"> </div>
+                <h1 className="font-bold sherif text-3xl p-4"> EVENTS</h1>
+                <div className="w-[1430px] h-[500.81px]">
+                <div className="h-[500px] w-full bg-green-400 bg-cover flex justify-center items-center" style={backG[3]}>
+                    <div className='flex flex-col justify-center items-center'>
+                        <p className='text-[50px] font-semibold text-white'>JOIN US GLOBALLY</p>
+                    </div>
+                </div>
+                </div>
             </div>
+        </main>
 
-            <div className='flex justify-center items-center'>
+        {/* Footer */}
+        <footer className='flex justify-center items-center'>
                 <div className="bg-slate-800 h-[460px] w-full flex justify-center items-start pt-20">
                     <div className='flex flex-col justify-center items-start w-1/4 pl-20'>
                         <h2 className='py-8 text-lg font-medium text-white'>USEFUL LINKS</h2> 
@@ -160,8 +171,7 @@ const HomeView = ({props}) => {
                         <p className=' text-white'>_abhijit_naik</p>
                     </div>
                 </div>
-            </div>
-        </main>
+            </footer>
         </>
     )
 }

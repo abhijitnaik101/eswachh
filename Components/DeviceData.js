@@ -3,7 +3,7 @@ function DeviceData(){
     const electronics = [
         {
           color: 'red',
-          name : 'Nokia 3310',
+          name : 'OPPO 310S',
           credit : '20',
 
         },

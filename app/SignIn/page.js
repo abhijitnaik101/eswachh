@@ -6,20 +6,31 @@ import { app } from '../Firebase';
 import HomeView from '../HomeView/page';
 import Profile from '@/Components/profile';
 import FireStore from '../FireStore/page';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const SignIn = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [userName, setUserName] = useState('');
     var isLoggedIn = false
 
-    
+
 
 
     const createUser = () => {
         createUserWithEmailAndPassword(auth, email, password).then(value => alert("Success"));
+        addDoc(collection(db, "users/"), {
+            email: email,
+            name : userName,
+            credits: 0,
+        }).then((docRef) => {
+            
+            console.log(`Stored data name :  ${userName} and email : ${email} ${docRef.id}`);
+        })
     }
 
     const signinUser = () => {
@@ -33,7 +44,7 @@ const SignIn = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                console.log("you are logged in");
+                console.log("you are logged in : ", user.email);
                 setUser(user)
             }
             else {
@@ -43,14 +54,16 @@ const SignIn = () => {
         })
     }, [])
 
-    if(user==null){
+    if (user == null) {
         return (
             <>
                 <div className='bg-slate-100 h-[90%] w-[100%] flex justify-center items-center fixed'>
                     <div className='h-[500px] flex items-center justify-center mx-auto flex-col bg-white p-8 border-[2px] rounded-xl w-1/4'>
                         <div className='flex flex-col items-start'>
+                            {/*<div className=''>user name</div>
+                            <input onChange={e => setUserName(e.target.value)} value={userName} className='px-4 h-12 my-2 border border-1 border-gray-200 rounded-lg' type='email' required placeholder='Email address' />*/}
                             <div className=''>Email</div>
-                            <input onChange={e => setEmail(e.target.value)} value={email} className='px-4 h-12 my-2 border border-1 border-gray-200 rounded-lg' type='email' required placeholder='Email address'/>
+                            <input onChange={e => setEmail(e.target.value)} value={email} className='px-4 h-12 my-2 border border-1 border-gray-200 rounded-lg' type='email' required placeholder='Email address' />
                             <div className=''>Password</div>
                             <input onChange={e => setPassword(e.target.value)} value={password} className='px-4 h-12 my-2 border border-1 border-gray-200 rounded-lg' type='password' required placeholder='Password' />
                         </div>
@@ -59,26 +72,26 @@ const SignIn = () => {
                         <hr />
                         <button onClick={createUser} className='bg-green-600 hover:bg-green-700 text-white font-bold text-sm py-[8px] px-[10px] mx-auto rounded-[3px]'>Create new account</button>
                     </div>
-                    <FireStore/>
+
                 </div>
-                
+
             </>
-            
-        ) 
+
+        )
     }
 
-    return(
+    return (
         <>
-            
+
             <div className='h-screen w-[100%] flex justify-center items-center'>
                 <div className='right flex items-center justify-center mx-auto flex-col bg-white p-8 border-[2px] rounded-xl w-1/4'>
                     <button onClick={() => signOut(auth)} className='bg-red-500 hover:bg-red-600 text-white font-bold text-sm py-[8px] px-[10px] mx-auto rounded-[3px]'>Logout</button>
                 </div>
-    </div>
-            </>
+            </div>
+        </>
     )
 
-    
+
 }
 
 export default SignIn;

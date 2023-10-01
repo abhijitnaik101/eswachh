@@ -5,29 +5,37 @@ function LocationData(){
           longitude: 85.79,
           latitude: 20.275502994202448,
           color: 'red',
-          name : 'First Name',
-          opening: '9:30'
+          name : 'Jagruti E-waste',
+          distance: '7km',
+          opening: '9:30 am',
+          closing: '9:30 pm'
         },
         {
           longitude: 85.79,
           latitude: 20.29,
           color: 'red',
-          name : 'second Name',
-          opening: '4:30'
+          name : 'Greenex India E-waste',
+          distance: '5km',
+          opening: '6:00 am',
+          closing: '9:30 pm'
         },
         {
           longitude: 85.74,
           latitude: 20.29,
           color: 'red',
-          name : 'third Name',
-          opening: '6:30'
+          name : 'Digi waste',
+          distance: '4km',
+          opening: '10:00 am',
+          closing: '10:30 pm'
         },
         {
           longitude: 85.76,
           latitude: 20.27,
           color: 'red',
-          name : 'Fourth Name',
-          opening: '7:00'
+          name : 'Ramesh Kabaadi wallah',
+          distance: '5km',
+          opening: '6:00 am',
+          closing: '7:30 pm'
         }
     
       ]
