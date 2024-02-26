@@ -7,20 +7,22 @@ const TopNav = () => {
 
     return (
         <>
-                <nav className='sticky top-0 z-10 w-full'>
-                    <div className='shadow-lg bg-gradient-to-r from-green-500 to-emerald-500 flex justify-between items-center h-[80px] w-full'>
-                        <div className='flex'>
-                            <div className='bg-white ml-10 mr-5 h-[30px] w-[30px]'></div>
-                            <p className='text-2xl text-white font-bold'>E-SWACHH</p>
+                <nav className='sticky top-0 z-20 w-full'>
+                    <div className='shadow-md bg-white flex justify-between items-center h-[80px] w-full '>
+                        <div className='flex items-center'>
+                            <div className='ml-10 mr-5 h-[50px] w-[50px]'>
+                                <img src='/logo.png' className='h-full w-full'/>
+                            </div>
+                            <p className='text-2xl font-bold'>E-Swachh.</p>
                         </div>
 
-                        <div className='w-[700px] flex justify-evenly items-center p-[5px]'>
-                            <Link href='/HomeView' className='text-white hover:font-semibold'>HOME</Link>
-                            <a href='/Location' className='text-white hover:font-semibold'>LOCATE</a>
-                            <Link href='/Device' className='text-white hover:font-semibold'>DISPOSE</Link>
-                            <Link href='/Awareness' className='text-white hover:font-semibold'>AWARENESS</Link>
+                        <div className='w-[700px] flex justify-evenly items-center text-black p-[5px] font-medium text-lg'>
+                            <Link href='/HomeView' className='hover:bg-slate-100 hover:text-xl duration-300 h-8 w-24 rounded-md text-center'>Home</Link>
+                            <a href='/Location' className='hover:bg-slate-100 hover:text-xl duration-300 h-8 w-24 rounded-md text-center'>Locate</a>
+                            <Link href='/Device' className='hover:bg-slate-100 hover:text-xl duration-300 h-8 w-24 rounded-md text-center'>Dispose</Link>
+                            <Link href='/Awareness' className='hover:bg-slate-100 hover:text-xl duration-300 h-8 w-28 rounded-md text-center'>Awareness</Link>
                             
-                            <Link href='/SignIn' className='px-3 py-1 border-2 hover:border-emerald-500 border-white rounded-md text-white font-medium hover:bg-emerald-600'>Logout</Link>
+                            <Link href='/SignIn' className='px-3 py-2 border-2 rounded-lg text-white bg-gradient-to-r from-violet-500 to bg-indigo-500 hover:from-violet-600 hover:to-indigo-600 hover:border-violet-500'>Logout</Link>
                         </div>
                     </div>
                 </nav>

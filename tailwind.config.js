@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['var(--font-poppins)'],
+        lato: ['var(--font-lato)'],
+        montserrat: ['var(--font-montserrat)'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

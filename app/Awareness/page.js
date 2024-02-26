@@ -10,74 +10,75 @@ const Awareness = () => {
         <img src="/aware1.png"/>
         <img src="/aware2.png"/>
     </div>
-    <div className="mx-16 mt-10">
-        <h2 className="font-bold text-2xl">What is E-Waste?</h2>
-        <p className='my-10'>E-waste is electronic products that are unwanted, not working, and nearing or at the end of their “useful life.” Computers, televisions, VCRs, stereos, copiers, and fax machines are everyday electronic products.The ongoing challenge of how best to dispose of used and unwanted electronics isn’t a new one and dates back at least to the 1970s. But a lot has changed since then, particularly the number of electronics being discarded today.We also have something else today: a term for this issue. After several terms got suggested, including “Digital rubbish,” a consensus formed around the simple word “e-waste.”</p>
-        <p>E-waste is any electrical or electronic equipment that’s been discarded. This includes working and broken items that are thrown in the garbage or donated to a charity reseller like Goodwill. Often, if the item goes unsold in the store, it will be thrown away. E-waste is particularly dangerous due to toxic chemicals that naturally leach from the metals inside when buried.</p>
+    <div className="mx-16 my-20 text-xl font-medium text-slate-800 text-center px-10">
+        <h2 className="font-bold text-5xl text-black m-10">What is E-Waste?</h2>
+        <p className='my-10 text-left '>E-waste is electronic products that are unwanted, not working, and nearing or at the end of their “useful life.” Computers, televisions, VCRs, stereos, copiers, and fax machines are everyday electronic products.The ongoing challenge of how best to dispose of used and unwanted electronics isn’t a new one and dates back at least to the 1970s. But a lot has changed since then, particularly the number of electronics being discarded today.We also have something else today: a term for this issue. After several terms got suggested, including “Digital rubbish,” a consensus formed around the simple word “e-waste.”</p>
+        <p className='text-left'>E-waste is any electrical or electronic equipment that’s been discarded. This includes working and broken items that are thrown in the garbage or donated to a charity reseller like Goodwill. Often, if the item goes unsold in the store, it will be thrown away. E-waste is particularly dangerous due to toxic chemicals that naturally leach from the metals inside when buried.</p>
     </div>
-    <div className="mx-16 mt-10">
-        <h2 className="font-semibold text-2xl ">How it affects our environment?</h2>
-            <div className="flex mt-6 bg-green-200">
-                <div className=" p-10">
-                <li>
+    <div className="mx-16 my-20 text-xl italic font-normal text-slate-800 text-center px-10">
+        <h2 className="font-bold text-5xl text-black m-10">How it affects our environment?</h2>
+            <div className="flex mt-6 bg-lime-100 items-center justify-evenly text-left">
+                <div className="p-10">
+                <li className='pb-4'>
                     <b className="text-black font-bold">Toxic Chemicals:</b> Many electronic devices contain hazardous materials such as lead, mercury, cadmium, and brominated flame retardants. When e-waste ends up in landfills or is incinerated, these toxins can leach into the soil, groundwater, and the air, leading to soil and water pollution and air pollution.    
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Resource Depletion:</b> Electronic devices require significant amounts of natural resources to manufacture. When e-waste is not recycled, these valuable resources are lost, and new materials must be mined, causing environmental degradation. For example, mining for rare earth metals, often found in electronics, can result in habitat destruction and water pollution.
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Data Security:</b> Improper disposal of electronic devices can also lead to data breaches and security risks. When sensitive data is not adequately erased or destroyed, it can be retrieved from discarded devices, potentially compromising personal or sensitive information.
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Waste Accumulation:</b> The volume of e-waste is growing rapidly due to the rapid pace of technological advancement and the short lifespan of many electronic devices. When not properly managed, e-waste takes up valuable landfill space and can contribute to the release of harmful substances into the environment.
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Soil Erosion:</b> Improper disposal of large e-waste items, such as old appliances, can contribute to soil erosion when they are left in open areas. These items can obstruct natural water flow, leading to soil erosion and degradation downstream.
                 </li>
                 </div>
+
                 <img className="h-72 mt-2 p-5 ml-8" src="https://imgs.search.brave.com/5aR5KXhxutrc4b-2_lS66O3bm-t5Knib46lC47WqR34/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMjQxOTQ0/MS80MzMwOC9pLzYw/MC9kZXBvc2l0cGhv/dG9zXzQzMzA4MjIz/MC1zdG9jay1waG90/by1waWxlLWFzc29y/dGVkLWVsZWN0cm9u/aWMtcHJvZHVjdHMt/d2FzdGUuanBn" alt=""/>
             </div>
     </div>
-    <div className="mx-16 mt-10">
-        <h2 className="font-semibold text-2xl ">How it affects our health?</h2>
+    <div className="mx-16 my-20 text-xl italic font-normal text-slate-800 text-center px-10">
+        <h2 className="font-bold text-5xl text-black m-10">How it affects our health?</h2>
         <div className="flex">
             <img className="h-96 mt-10 ml-6" src="https://imgs.search.brave.com/5ZZ9jJcfwMIulxpe-kBhXWn8p8Dkg6SU21eM_SBXMqI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRs/aW5lcGx1cy5nb3Yv/aW1hZ2VzL1RoeXJv/aWREaXNlYXNlcy5q/cGc" alt=""/>
-            <div className="mt-2 p-10">
-            <li>
+            <div className="mt-2 p-10 text-left">
+            <li className='pb-4'>
                 <b className="text-black font-bold">Toxic Chemicals:</b> Many electronic devices contain hazardous materials such as lead, mercury, cadmium, and brominated flame retardants. When e-waste ends up in landfills or is incinerated, these toxins can leach into the soil, groundwater, and the air, leading to soil and water pollution and air pollution.    
             </li>
-            <li>
+            <li className='pb-4'>
                 <b className="text-black font-bold">Resource Depletion:</b> Electronic devices require significant amounts of natural resources to manufacture. When e-waste is not recycled, these valuable resources are lost, and new materials must be mined, causing environmental degradation. For example, mining for rare earth metals, often found in electronics, can result in habitat destruction and water pollution.
             </li>
-            <li>
+            <li className='pb-4'>
                 <b className="text-black font-bold">Data Security:</b> Improper disposal of electronic devices can also lead to data breaches and security risks. When sensitive data is not adequately erased or destroyed, it can be retrieved from discarded devices, potentially compromising personal or sensitive information.
             </li>
-            <li>
+            <li className='pb-4'>
                 <b className="text-black font-bold">Waste Accumulation:</b> The volume of e-waste is growing rapidly due to the rapid pace of technological advancement and the short lifespan of many electronic devices. When not properly managed, e-waste takes up valuable landfill space and can contribute to the release of harmful substances into the environment.
             </li>
-            <li>
+            <li className='pb-4'>
                 <b className="text-black font-bold">Soil Erosion:</b> Improper disposal of large e-waste items, such as old appliances, can contribute to soil erosion when they are left in open areas. These items can obstruct natural water flow, leading to soil erosion and degradation downstream.
             </li>
             </div>
         </div>
     </div>
-    <div className="mx-16 mt-8">
-        <h2 className="font-semibold text-2xl ">How it affects our environment?</h2>
-            <div className="flex mt-6 bg-green-200">
-                <div className="p-10">
-                <li>
+    <div className="mx-16 my-20 text-xl italic font-normal text-slate-800 text-center px-10">
+        <h2 className="font-bold text-5xl text-black m-10">How it affects our environment?</h2>
+            <div className="flex mt-6 bg-lime-100">
+                <div className="p-10 text-left">
+                <li className='pb-4'>
                     <b className="text-black font-bold">Toxic Chemicals:</b> Many electronic devices contain hazardous materials such as lead, mercury, cadmium, and brominated flame retardants. When e-waste ends up in landfills or is incinerated, these toxins can leach into the soil, groundwater, and the air, leading to soil and water pollution and air pollution.    
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Resource Depletion:</b> Electronic devices require significant amounts of natural resources to manufacture. When e-waste is not recycled, these valuable resources are lost, and new materials must be mined, causing environmental degradation. For example, mining for rare earth metals, often found in electronics, can result in habitat destruction and water pollution.
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Data Security:</b> Improper disposal of electronic devices can also lead to data breaches and security risks. When sensitive data is not adequately erased or destroyed, it can be retrieved from discarded devices, potentially compromising personal or sensitive information.
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Waste Accumulation:</b> The volume of e-waste is growing rapidly due to the rapid pace of technological advancement and the short lifespan of many electronic devices. When not properly managed, e-waste takes up valuable landfill space and can contribute to the release of harmful substances into the environment.
                 </li>
-                <li>
+                <li className='pb-4'>
                     <b className="text-black font-bold">Soil Erosion:</b> Improper disposal of large e-waste items, such as old appliances, can contribute to soil erosion when they are left in open areas. These items can obstruct natural water flow, leading to soil erosion and degradation downstream.
                 </li>
                 </div>

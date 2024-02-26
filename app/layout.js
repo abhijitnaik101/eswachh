@@ -1,15 +1,13 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-import { Poppins } from 'next/font/google'
+import { Montserrat, Poppins, Lato } from 'next/font/google'
+
 import TopNav from '@/Components/TopNav'
 import { options } from '@/Components/BarChart'
 
-const inter = Inter({ subsets: ['latin'] })
-const poppins = Poppins({
-  subsets: ['latin'], 
-  weight: '400',
-  variable: '--font-poppins'
-}) 
+
+const lato = Lato({ subsets: ['latin'], weight: '700', variable: '--font-lato',})
+const poppins = Poppins({subsets: ['latin'],  weight: '400', variable: '--font-poppins'}) 
+const montserrat = Montserrat({subsets: ['latin'], weight: '400', variable: '--font-montserrat'}) 
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}><TopNav/>{children}</body>
+      <body className={`${montserrat.variable}`}><TopNav/>{children}</body>
     </html>
   )
 }

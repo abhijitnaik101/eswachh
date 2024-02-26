@@ -7,6 +7,7 @@ import SearchBar from '@/Components/SearchBar';
 import UploadPhoto from '../FireStorage/uploadPhoto';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from 'framer-motion';
 
 const Location = () => {
 
@@ -41,15 +42,13 @@ const Location = () => {
         setSearchClicked(true);
     }
 
-    
-
     function pickStatusChange(value) {
         setIsPickClicked(value);
     }
 
     function searchedLocation() {
         setSpecLocation(LocationData().filter(value => {
-            if(value.name === searchLocation){
+            if (value.name === searchLocation) {
                 return value.latitude;
             }
         }));
@@ -67,25 +66,24 @@ const Location = () => {
 
         setShowTrashPins(false);
         setIsSearchedClicked(true);
-        if(isSearchedClicked){
-            setSortedName(LocationData().filter(value => { return value.name.toLowerCase().startsWith(searchLocation.toLowerCase())}));
+        if (isSearchedClicked) {
+            setSortedName(LocationData().filter(value => { return value.name.toLowerCase().startsWith(searchLocation.toLowerCase()) }));
             print("Sorted name: ", sortedName);
         }
     }
 
-    function showOptions(){
-        
+    function showOptions() {
+
     }
 
     return (
         <>
             <main className='relative'>
-                <div className='h-screen w-screen flex justify-evenly fixed bg-zinc-100 p-2'>
+                <div className='w-screen flex justify-evenly p-2 relative'>
                     <div className='w-[70%] h-max'>
-                        <div className=' h-max w-full flex justify-center items-end px-5'>
+                        {/* <div className=' h-max w-full flex justify-center items-end px-5 bg-purple-300'>
                             
-
-                            {/*Search Bar*/}
+                            
                             <div className='w-full mr-6 relative'>
 
                                 <div className='flex justify-between items-center'>
@@ -107,55 +105,63 @@ const Location = () => {
                                         </div>
                                     </> : <></>
                                 }
-                            </div>
-                        </div>
-                        <div className='flex flex-col justify-center items-center p-6 h-[500px] w-full'>
-                            <MapView showAllMarkers={showTrashPins} showMyLocation={myLocationClicked} speLocation={specLocation} speBool={specBool}/>
-                            <div className='flex justify-center'>
-                            <button onClick={
-                                () => {
-                                    if (myLocationClicked === false) {
-                                        setMyLocationClicked(true);
-                                    }
-                                    else {
-                                        setMyLocationClicked(false);
-                                    }
-                                }
-                            } className='mx-5 my-1 h-10 w-32 rounded-sm bg-blue-500 hover:bg-blue-600 text-white'>My Location</button>
-                            <button onClick={() => {
-                                if (searchLocation === null) {
-                                    if (showTrashPins === false)
-                                        setShowTrashPins(true);
-                                    else
-                                        setShowTrashPins(false);
-                                }
-                                else {
-
-                                }
-
-                            }} className='bg-blue-500 hover:bg-blue-600 mx-5 my-1 h-10 w-36 rounded-sm text-white'>
-                                Nearby Facility
-                            </button>
-                            </div>
+                            </div> 
                             
+                        </div>*/}
+                        <div className='flex flex-col justify-center items-center h-max w-full '>
+                            <MapView showAllMarkers={showTrashPins} showMyLocation={myLocationClicked} speLocation={specLocation} speBool={specBool} />
+
+                            <motion.div initial={{y:200}} animate={{y:0}} transition={{duration:0.5}}
+                                className='flex justify-center bg-white absolute p-4 bottom-8 rounded-full'>
+                                <motion.button whileTap={{ scale: 0.9 }}
+                                    onClick={
+                                        () => {
+                                            if (myLocationClicked === false) {
+                                                setMyLocationClicked(true);
+                                            }
+                                            else {
+                                                setMyLocationClicked(false);
+                                            }
+                                        }
+                                    } className='h-10 w-32 rounded-full mx-2 bg-slate-800 hover:bg-slate-900 text-white hover:text-[17px] duration-300'>
+                                    My Location
+                                </motion.button>
+
+                                <motion.button whileTap={{ scale: 0.9 }}
+                                    onClick={() => {
+                                        if (searchLocation === null) {
+                                            if (showTrashPins === false)
+                                                setShowTrashPins(true);
+                                            else
+                                                setShowTrashPins(false);
+                                        }
+                                        else {
+
+                                        }
+
+                                    }} className=' rounded-full mx-2 bg-slate-800 hover:bg-slate-900 hover:text-[17px] h-10 w-36  text-white'>
+                                    Nearby Facility
+                                </motion.button>
+                            </motion.div>
                         </div>
                     </div>
 
-                    <div className='flex flex-col justify-start items-center h-full w-[25%]'>
 
-                        <div className='w-full bg-slate-50 rounded-lg mt-4 h-[70%] overflow-auto scrollbar  scrollbar-track-inherit scrollbar-thumb-slate-400 shadow-sm' >
+                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}} className='flex flex-col justify-start items-center h-[600px] w-[35%] bg-slate-50'>
 
+                        <div className='w-full bg-slate-50 rounded-lg h-max overflow-auto scrollbar scrollbar-track-inherit scrollbar-thumb-slate-400 shadow-sm flex flex-wrap' >
+                            
                             <h1 className='bg-slate-50 text-slate-800 text-xl text-center font-semibold pt-4 pb-2 w-full sticky top-0 z-10'>Locations</h1>
                             {/*<LocationTile location={'Berkshire street'} open={2.30} isPickPressed={pickStatusChange} />*/}
                             {showTrashPins && LocationData().map((value, index) =>
                                 <LocationTile location={value.name} open={value.opening} close={value.closing} distance={value.distance} isPickPressed={pickStatusChange} />
                             )}
                             {
-                                setSearchClicked && sortedName.map( (value, index) => <LocationTile location={value.name} open={value.opening} close={value.closing} distance={value.distance} isPickPressed={pickStatusChange} />)
+                                setSearchClicked && sortedName.map((value, index) => <LocationTile location={value.name} open={value.opening} close={value.closing} distance={value.distance} isPickPressed={pickStatusChange} />)
                             }
 
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {
@@ -163,7 +169,7 @@ const Location = () => {
                         <div className='fixed w-full h-screen flex justify-center items-start bg-black opacity-20'></div>
                         <div className='fixed w-full h-screen flex justify-center items-start'>
 
-                            <UploadPhoto isXClicked={pickStatusChange}/>
+                            <UploadPhoto isXClicked={pickStatusChange} />
                         </div>
                     </> : <></>
                 }
